@@ -25,7 +25,61 @@ header {
   overflow: hidden;
 }
 
+.menu-btn {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.menu-btn__burguer {
+  width: 60px;
+  height: 6px;
+  background-color: var(--text-color);
+  transition: ease-out 400ms;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.menu-btn__burguer::before,
+.menu-btn__burguer::after {
+  border-radius: 5px;
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 6px;
+  background-color: var(--text-color);
+  transition: ease-out 400ms;
+}
+
+.menu-btn__burguer::before {
+  transform: translateY(-16px);
+}
+.menu-btn__burguer::after {
+  transform: translateY(16px);
+}
+.menu-btn.open .menu-btn__burguer {
+  transform: translateX(-60px);
+  background-color: transparent;
+}
+.menu-btn.open .menu-btn__burguer::before{
+  transform: translate(60px, 0px) rotate(-45deg);
+}
+.menu-btn.open .menu-btn__burguer::after {
+  transform: translate(60px, 0px) rotate(45deg);
+}
+
+
+
+
 nav {
+  z-index: 100;
   margin-top: 5px;
   width: 80%;
   height: 80px;
@@ -42,11 +96,21 @@ nav ul {
   gap: 15px;
 }
 
-nav ul a{
+nav ul li {
+  cursor: pointer;
+}
+
+nav ul a {
   text-decoration: none;
   color: white;
   font-size: 1.5rem;
   text-transform: uppercase;
+  transition: 400ms;
+  cursor: pointer;
+}
+
+nav ul a:hover{
+  color: var(--text-color);
 }
 
 nav img {
@@ -139,16 +203,72 @@ nav img {
   background-color: #e02201;
 }
 
+
+
+
+
 @media (max-width: 950px) {
   .header-content {
     width: 95%;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 730px) {
   header {
-    height: 100vh;
+    min-height: 100vh;
+    height: max-content;
   }
+  nav {
+    margin: 0;
+    display: none;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px;
+    justify-content: flex-start;
+    top: 0;
+    right: -320px;
+    z-index: 150;
+    width: 320px;
+    height: 100vh;
+    background-color: #ffffff;
+    transition: all ease-out 400ms;
+  }
+
+  nav img {
+    width: 280px;
+  }
+
+  nav ul {
+    margin-top: 100px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav ul a{
+    font-size: 2rem;
+    color: var(--text-color);
+  }
+
+  nav.mobile-menu {
+    right: 0;
+  }
+
+
+
+  .menu-btn{
+    display: flex;
+  }
+  .header-content {
+    margin-top: 80px;
+  }
+}
+
+
+@media (max-width: 600px) {
+
   .page-title {
     font-size: 3rem;
   }
