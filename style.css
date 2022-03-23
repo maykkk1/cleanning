@@ -14,6 +14,7 @@
   --green: #a3cd39;
 }
 
+
 header {
   width: 100%;
   height: 90vh;
@@ -25,6 +26,7 @@ header {
   overflow: hidden;
 }
 
+/* --------------- MENU MOBILE */
 .menu-btn {
   width: 60px;
   height: 60px;
@@ -68,32 +70,31 @@ header {
   transform: translateX(-60px);
   background-color: transparent;
 }
-.menu-btn.open .menu-btn__burguer::before{
+.menu-btn.open .menu-btn__burguer::before {
   transform: translate(60px, 0px) rotate(-45deg);
 }
 .menu-btn.open .menu-btn__burguer::after {
   transform: translate(60px, 0px) rotate(45deg);
 }
 
-
-
-
+/* --------------- NAV */
 nav {
   z-index: 100;
-  margin-top: 5px;
-  width: 80%;
+  width: 100%;
   height: 80px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 10px 0;
   margin-bottom: 30px;
+  background-color: white;
 }
 
 nav ul {
   display: flex;
+  font-weight: 600;
   list-style: none;
-  gap: 15px;
+  gap: 25px;
 }
 
 nav ul li {
@@ -102,14 +103,14 @@ nav ul li {
 
 nav ul a {
   text-decoration: none;
-  color: white;
-  font-size: 1.5rem;
+  color: black;
+  font-size: 1.3rem;
   text-transform: uppercase;
   transition: 400ms;
   cursor: pointer;
 }
 
-nav ul a:hover{
+nav ul a:hover {
   color: var(--text-color);
 }
 
@@ -117,6 +118,7 @@ nav img {
   width: 180px;
 }
 
+/* --------------- HEADER IMAGES */
 .bg-image-wrapper {
   position: absolute;
   width: 100%;
@@ -128,7 +130,7 @@ nav img {
 .bg-image-wrapper img {
   width: 100%;
   height: 100%;
-  opacity: 0.15;
+  opacity: 0.2;
   object-position: bottom;
   object-fit: cover;
 }
@@ -152,6 +154,7 @@ nav img {
   opacity: 0.5;
 }
 
+/* --------------- HEADER CONTENT */
 .header-content {
   z-index: 100;
   width: 80%;
@@ -164,8 +167,9 @@ nav img {
 }
 
 .page-title {
+  color: var(--green);
   font-size: 3.5rem;
-  text-shadow: 2px 2px 5px black;
+  text-shadow: 0.5px 0.5px 2px black;
   margin-bottom: 20px;
 }
 
@@ -173,6 +177,12 @@ nav img {
   font-size: 1.5rem;
   text-shadow: 0.5px 0.5px 3px black;
   margin-bottom: 15px;
+}
+
+.page-subtitle strong {
+  color: var(--green);
+  text-transform: uppercase;
+  font-size: 1.7rem;
 }
 
 .header-content span {
@@ -187,7 +197,7 @@ nav img {
   background-color: var(--secundary-color);
   width: 500px;
   text-transform: uppercase;
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   padding: 15px 0;
   font-weight: bolder;
   color: white;
@@ -200,16 +210,160 @@ nav img {
 }
 
 .header-content button:hover {
-  background-color: #e02201;
+  background-color: #e06d01;
 }
 
+main {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+main h2 {
+  text-shadow: 0.3px 0.3px 2px black;
+}
 
+/* --------------- QUEM SOMOS */
+.quem-somos {
+  width: 80%;
+  height: 65vh;
+  display: flex;
+  padding-top: 20px;
+  border-bottom: 3px solid var(--green);
+  overflow: hidden;
+}
 
+.quem-somos-texto {
+  width: 50%;
+  height: 100%;
+}
+
+.quem-somos-texto h2 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.quem-somos-texto p {
+  color: rgb(29, 28, 28);
+  width: 80%;
+  font-size: 1.3rem;
+}
+
+.quem-somos-video {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  height: 100%;
+}
+
+/* --------------- SERVICOS */
+
+.servicos {
+  padding: 20px;
+  width: 80%;
+}
+
+.servicos h2 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.servicos-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.servico-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  height: 600px;
+}
+
+.servico-item h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  padding: 0 15px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  height: 10%;
+  color: white;
+  background-color: var(--primary-color);
+  transform: translateY(30px) translateX(-38px);
+}
+
+.servico-item__imgs-wrapper {
+  width: 100%;
+  height: 90%;
+  box-shadow: 0 3px 5px var(--primary-color);
+}
+
+.servico-item__img-antes-wrapper,
+.servico-item__img-depois-wrapper {
+  border: solid 1px white;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+
+.servico-item__img-antes-wrapper {
+  border-bottom: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.servico-item__img-depois-wrapper {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.servico-item__img-antes-wrapper img,
+.servico-item__img-depois-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1120px) {
+  .quem-somos {
+    width: 95%;
+  }
+}
 
 @media (max-width: 950px) {
   .header-content {
     width: 95%;
+  }
+  .quem-somos {
+    flex-direction: column;
+    align-items: center;
+    height: 120vh;
+  }
+
+  .quem-somos-texto,
+  .quem-somos-video {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .quem-somos-texto {
+    padding: 0 30px;
+  }
+
+  .quem-somos-texto h2 {
+    text-align: center;
+  }
+
+  .quem-somos-texto p {
+    width: 100%;
   }
 }
 
@@ -232,7 +386,7 @@ nav img {
     right: -320px;
     z-index: 150;
     width: 320px;
-    height: 100vh;
+    height: 100%;
     background-color: #ffffff;
     transition: all ease-out 400ms;
   }
@@ -247,7 +401,7 @@ nav img {
     gap: 20px;
   }
 
-  nav ul a{
+  nav ul a {
     font-size: 2rem;
     color: var(--text-color);
   }
@@ -256,9 +410,7 @@ nav img {
     right: 0;
   }
 
-
-
-  .menu-btn{
+  .menu-btn {
     display: flex;
   }
   .header-content {
@@ -266,9 +418,7 @@ nav img {
   }
 }
 
-
 @media (max-width: 600px) {
-
   .page-title {
     font-size: 3rem;
   }
