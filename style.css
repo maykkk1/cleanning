@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 :root {
-  --primary-color: #e08701;
+  --primary-color: #e07801;
   --secundary-color: #04eedf;
   --text-color: #2b517d;
   --green: #a3cd39;
@@ -210,7 +211,7 @@ nav img {
 }
 
 .header-content button:hover {
-  background-color: #e06d01;
+  background-color: #0c978e;
 }
 
 main {
@@ -263,10 +264,8 @@ main h2 {
 .servicos {
   width: 100%;
 }
-
-
 .servicos h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: var(--text-color);
   margin-bottom: 20px;
   text-align: center;
@@ -280,7 +279,6 @@ main h2 {
   position: relative;
   padding: 30px 0;
   box-shadow: 0px 3px 15px black;
-  margin-bottom: 50px;
   background-color: black;
 }
 
@@ -311,15 +309,15 @@ main h2 {
 
 .servico-item h2 {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   padding: 0 15px;
   text-transform: uppercase;
   font-weight: lighter;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 8%;
-  width: 280px;
+  height: 10%;
+  width: 340px;
   color: white;
   background-color: var(--primary-color);
   transform: translateY(30px);
@@ -355,6 +353,92 @@ main h2 {
   height: 100%;
   object-fit: cover;
 }
+
+
+/* --------------- CONTATO */
+
+.contato {
+  margin-top: 30px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(./assets/image/form-bg.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  padding-bottom: 3rem;
+  border-radius: 5px;
+}
+
+.contato h2 {
+  font-size: 3rem;
+  color: white;
+}
+
+
+.contato form{
+  width: 500px;
+  height: 480px;
+  background-color: #fffffff1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 25px;
+}
+
+.contato form label {
+  color: rgb(77, 70, 70);
+  font-size: 1.5rem;
+  text-transform: lowercase;
+}
+
+.contato form input {
+  margin-bottom: 15px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgb(77, 70, 70);
+  background-color: #2b517d21;
+  height: 2rem;
+  font-size: 1rem;
+  padding-left: 5px;
+}
+
+.contato form textarea {
+  resize: none;
+  background-color: #2b517d21;
+  padding-left: 5px;
+  font-size: 1rem;
+}
+
+.contato form button {
+  width: 100%;
+  height: 50px;
+  margin:15px auto 0 auto;
+  background-color: var(--secundary-color);
+  border: none;
+  font-weight: bolder;
+  color: white;
+  font-size: 1.5rem;
+  transform: translateY(35px);
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.contato form button:hover {
+  background-color: #1aaaa0;
+}
+
+
+
+
+
+
+
+
+
+/* --------------- Media queries */
 
 @media (max-width: 1120px) {
   .quem-somos {
@@ -453,5 +537,11 @@ main h2 {
   .header-content button {
     font-size: 1.7rem;
     width: 340px;
+  }
+  .contato {
+    width: 100%;
+  } 
+  .contato form {
+    width: 90%;
   }
 }
